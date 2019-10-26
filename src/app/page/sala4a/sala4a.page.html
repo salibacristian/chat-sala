@@ -21,11 +21,21 @@
     </div>
     <ng-template #propio>
       <div class="mensaje-propio">
-        <p> {{chat.mensaje}}</p>       
+        <p> {{chat.mensaje}}</p>
       </div>
       <p class="fecha-propia">{{chat.fecha}}</p>
     </ng-template>
   </div>
+
+
+
+  <ion-item class="footer">
+    <ion-textarea rows="1" cols="20" placeholder="Tu mensaje..." [(ngModel)]="mensaje"></ion-textarea>
+    <ion-button shape="round" (click)="enviar()">
+      <ion-icon slot="end" name="send"></ion-icon>
+    </ion-button>
+  </ion-item>
+
 
 
 

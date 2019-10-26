@@ -9,7 +9,7 @@ export interface Chat {
   usuario: string;
   mensaje: string;
   sala: string;
-  fecha: string;
+  fecha: Date;
 }
 
 
