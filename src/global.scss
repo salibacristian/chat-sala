@@ -48,42 +48,43 @@
     animation-timing-function: linear; 
 }
 
-// .avionceleste {
-//     /* The image used */
-//     background-image: url("./assets/splash/avionceleste.png");
+.avionceleste {
+    /* The image used */
+    background-image: url("./assets/splash/avionceleste.png");
   
-//     /* Full height */
-//     height: 100%; 
+    /* Full height */
+    height: 100%; 
 
-//     /* Center and scale the image nicely */
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: 50%;
-//     animation-name: spin;
-//     animation-duration:2500ms;
-//     animation-iteration-count: infinite;
-//     animation-timing-function: linear; 
-// }
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    animation-name: spin2;
+    animation-duration:3500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+
 
 
 @keyframes spin {
     from {
-        transform:translate(80px,0px);
+        transform:translate(100px,0px);
     }
     to {
-        transform:translate(0px,80px);
+        transform:translate(0px,100px);
     }
 }
 
-// @keyframes spin {
-//     from {
-//         transform:rotate(0deg);
-//     }
-//     to {
-//         transform:rotate(360deg);
-//     }
-// }
-
+@keyframes spin2 {
+    from {
+        transform:translate(-80px,-200px);
+    }
+    to {
+        transform:translate(0px,-300px);
+    }
+}
 
 
 
