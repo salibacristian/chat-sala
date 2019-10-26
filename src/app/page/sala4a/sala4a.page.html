@@ -6,7 +6,7 @@
 
 <ion-content>
 
-  <div *ngFor="let chat of todosLosChats">
+  <div *ngFor="let chat of todosLosChats; let i = index" [attr.data-index]="i">
     <div *ngIf="!chat.propio;else propio">
       <ion-item-divider>
         <ion-label>
@@ -16,14 +16,14 @@
       <div class="mensaje">
         <p> {{chat.mensaje}}</p>
       </div>
-      <p class="fecha">{{chat.fecha}}</p>
+      <p [ngClass]="{'fecha': i < (todosLosChats.length - 1), 'fecha-ultima': i == (todosLosChats.length - 1)}">{{chat.fecha}}</p>
 
     </div>
     <ng-template #propio>
       <div class="mensaje-propio">
         <p> {{chat.mensaje}}</p>
       </div>
-      <p class="fecha-propia">{{chat.fecha}}</p>
+      <p [ngClass]="{'fecha-propia': i < (todosLosChats.length - 1), 'fecha-propia-ultima': i == (todosLosChats.length - 1)}">{{chat.fecha}}</p>
     </ng-template>
   </div>
 
