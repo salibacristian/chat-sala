@@ -1,0 +1,49 @@
+.mensaje{
+    background-color:lightgreen;
+    margin-right: 25%;
+    margin-left: 5%;
+    // margin-bottom: 5%;
+    padding: 5%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.mensaje-propio{
+    background-color: rgb(79, 67, 187,0.5);
+    margin-left: 25%;
+    margin-right: 5%;
+    // margin-bottom: 5%;
+    padding: 5%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.fecha{
+    background-color: lightgreen;
+    margin-right: 25%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 0%;
+    padding-left: 5%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: rgba(109, 109, 109, 0.7);
+}
+.fecha-propia{
+    background-color: rgb(79, 67, 187,0.5);
+    margin-left: 25%;
+    margin-right: 5%;
+     margin-bottom: 5%;
+     margin-top: 0%;
+     padding-left: 5%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: rgba(109, 109, 109, 0.7);
+}
+
+.inputMensaje{
+    width: 100%;
+}
+
+.footer{
+    position: absolute;
+    bottom: 15%;
+}

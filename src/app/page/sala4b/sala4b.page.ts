@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from 'src/app/services/chat.service';
+import { ChatService, Chat } from 'src/app/services/chat.service';
 
 @Component({
   selector: 'app-sala4b',
@@ -8,32 +8,40 @@ import { ChatService } from 'src/app/services/chat.service';
 })
 export class Sala4bPage implements OnInit {
 
-  constructor(private subir:ChatService) { }
-  arrayCosasLindas=[];
+  constructor(private subir: ChatService) { }
+  todosLosChats = [];
+  mensaje = '';
 
   ngOnInit() {
-    // this.ObtenerLindasDeBase();
+    this.ObtenerChats();
   }
 
-  // private async ObtenerLindasDeBase() {
-  //   var currentUserEmail = this.subir.getCurrentUser();
-  //   this.subir.ObtenerFotos().subscribe(async (fotos) => {
-  //     this.subir.ObtenerVotos().subscribe(async (votos) => {
-  //       fotos.forEach(function (foto) {
-  //         var votoDeLaFoto = votos.find(function (voto) {
-  //           return voto.fotoId == foto.id;
-  //         });
-  //         var usuarios: Array<string> = JSON.parse(votoDeLaFoto.users);
-  //         foto.votadaPorUsuario = usuarios.some(function (email) {
-  //           return email == currentUserEmail;
-  //         });
-  //       });
+  private async ObtenerChats() {
+    var currentUserEmail = this.subir.getCurrentUser();
+    this.subir.ObtenerChats('sala4b').subscribe(async (chats) => {
+      this.todosLosChats = chats;
+      this.todosLosChats.forEach(function (c) {
+        if (c.usuario == currentUserEmail)
+          c.propio = true;
+      });
+      this.todosLosChats.sort((a, b) => {
+        return a.fecha.localeCompare(b.fecha);
+      });
+    });
+  }
 
-  //       this.arrayCosasLindas = this.subir.FiltrarFotos(fotos, 'linda');
-  //       this.OrderByDate();
-  //     });
-  //   });
-  // }
+  private async enviar() {
+    var currentUserEmail = this.subir.getCurrentUser();
+    var nuevoChat: Chat = {
+      id:'',
+      fecha:new Date(),
+      mensaje: this.mensaje,
+      usuario: currentUserEmail,
+      sala: 'sala4b'
+    };
+
+    this.subir.UploadToFirestore(nuevoChat);
+  }
 
  
 
