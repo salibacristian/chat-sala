@@ -39,7 +39,7 @@ export class Sala4bPage implements OnInit {
       usuario: currentUserEmail,
       sala: 'sala4b'
     };
-
+    this.mensaje = '';
     this.subir.UploadToFirestore(nuevoChat);
   }
 
