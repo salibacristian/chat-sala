@@ -16,7 +16,7 @@ export class AppComponent {
 
   showSplash = true;
   notShowSplash = false;
-  titulo = 'Relevamiento Visual';
+  titulo = 'Sala de Chat';
 
   constructor(
     private platform: Platform,
