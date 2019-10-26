@@ -9,31 +9,22 @@ import { ChatService } from 'src/app/services/chat.service';
 export class Sala4aPage implements OnInit {
 
   constructor(private subir:ChatService) { }
-  arrayCosasLindas=[];
+  todosLosChats=[];
 
   ngOnInit() {
-    // this.ObtenerLindasDeBase();
+     this.ObtenerChats();
   }
 
-  // private async ObtenerLindasDeBase() {
-  //   var currentUserEmail = this.subir.getCurrentUser();
-  //   this.subir.ObtenerFotos().subscribe(async (fotos) => {
-  //     this.subir.ObtenerVotos().subscribe(async (votos) => {
-  //       fotos.forEach(function (foto) {
-  //         var votoDeLaFoto = votos.find(function (voto) {
-  //           return voto.fotoId == foto.id;
-  //         });
-  //         var usuarios: Array<string> = JSON.parse(votoDeLaFoto.users);
-  //         foto.votadaPorUsuario = usuarios.some(function (email) {
-  //           return email == currentUserEmail;
-  //         });
-  //       });
-
-  //       this.arrayCosasLindas = this.subir.FiltrarFotos(fotos, 'linda');
-  //       this.OrderByDate();
-  //     });
-  //   });
-  // }
+  private async ObtenerChats() {
+    var currentUserEmail = this.subir.getCurrentUser();
+    this.subir.ObtenerChats('sala4a').subscribe(async (chats) => {
+      this.todosLosChats = chats;
+      this.todosLosChats.forEach(function(c){
+          if(c.usuario == currentUserEmail)
+            c.propio = true;
+      });
+    });
+  }
 
  
 

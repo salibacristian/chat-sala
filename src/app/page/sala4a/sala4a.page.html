@@ -6,4 +6,28 @@
 
 <ion-content>
 
+  <div *ngFor="let chat of todosLosChats">
+    <div *ngIf="!chat.propio;else propio">
+      <ion-item-divider>
+        <ion-label>
+          {{chat.usuario}}
+        </ion-label>
+      </ion-item-divider>
+      <div class="mensaje">
+        <p> {{chat.mensaje}}</p>
+      </div>
+      <p class="fecha">{{chat.fecha}}</p>
+
+    </div>
+    <ng-template #propio>
+      <div class="mensaje-propio">
+        <p> {{chat.mensaje}}</p>       
+      </div>
+      <p class="fecha-propia">{{chat.fecha}}</p>
+    </ng-template>
+  </div>
+
+
+
+
 </ion-content>

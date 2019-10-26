@@ -40,7 +40,7 @@ export class ChatService {
   }
 
 
-  public ObtenerFotos(sala: string) {
+  public ObtenerChats(sala: string) {
     return this.firestore.collection('chats').snapshotChanges().pipe(map((chats) => {
       var chatsFiltrados =  chats.map((a) => {
         const data = a.payload.doc.data() as Chat;

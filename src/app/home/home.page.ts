@@ -11,31 +11,12 @@ export class HomePage {
   constructor(private publicRouter:Router, private subir:ChatService) { }
   aux;
   ngOnInit() {
-
-    
+   
   }
-  // tomarFoto(tipo){
-    
 
-  //   this.camera.getPicture(camOptions).then(async (pictureAux) => {
-  //     // Send the picture to Firebase Storage
-  //     this.subir.UploadToFirebase(pictureAux, tipo);
-  //   }, error => {
-  //     console.log(error);
-  //     if (error === 'No Image Selected') {
-  //       console.log(error);
-  //     } else {
-  //       console.log(error);
-  //     }
-  //     console.log(error);
-  //   }).catch(err => {
-  //     console.log(err);
-  //   });
-
-  // }
-  // mover(lugar){
-  //   this.aux = this.tomarFoto(lugar);
-  //   this.publicRouter.navigate([lugar]);
-  // }
+  ir(sala){
+   
+    this.publicRouter.navigate([sala]);
+  }
 }
 
