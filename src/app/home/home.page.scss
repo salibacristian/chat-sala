@@ -1,1 +1,34 @@
+.all{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-color: black;
+}
 
+.mitad{
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background-color: rgb(12, 58, 136);
+}
+
+.boton{
+  height: 99%;
+  width: 105%;
+
+}
+
+.icono{
+  position: relative;
+  height: 100%;
+  width: 30%;
+  top: 0%;
+}
+
+.text{
+  position: relative;
+  text-align: center;
+  top: 25%;
+  font-size: 40px;
+}
